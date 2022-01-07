@@ -58,4 +58,15 @@ public class StringCalculatorTest {
         assertThat(stringCalculatorInstance.add("#2#1000"), is(1002));
     }
 
+    @Test
+    public void pluralCharactersDelimiterTest() throws Exception {
+        assertThat(stringCalculatorInstance.add("#1#2"), is(3));
+//        assertThat(stringCalculatorInstance.add("#5#7##"), is(12));
+    }
+    @Test
+    public void pluralCharactersDelimiterOneOSomeTest() throws Exception {
+        assertThat(stringCalculatorInstance.add("[###]1[###]3"), is(4));
+        assertThat(stringCalculatorInstance.add("[###]5[###]7[###]"), is(12));
+    }
+
 }
